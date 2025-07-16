@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVIS VINCI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        .document {
+            width: 210mm;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-sizing: border-box;
+        }
+        
+        .logo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .logo {
+            height: 80px;
+        }
+        
+        .header-info {
+            text-align: right;
+        }
+        
+        .document-title {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .devis-heading {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2e7d32;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .document-ref {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .client-info {
+            margin: 40px 0 30px;
+        }
+        
+        .client-name {
+            font-size: 20px;
+            font-weight: 500;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .project-title {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            font-size: 14px;
+        }
+        
+        .items-table th {
+            background-color: #2e7d32;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .items-table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+        }
+        
+        .items-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .document-details {
+            margin: 30px 0;
+        }
+        
+        .detail-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .payment-terms {
+            background-color: #f1f8e9;
+            padding: 25px;
+            border-left: 5px solid #2e7d32;
+            margin: 40px 0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 25px;
+            line-height: 1.8;
+        }
+        
+        .footer strong {
+            color: #2e7d32;
+            font-weight: 500;
+        }
+        
+        .highlight {
+            font-weight: 500;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="logo-header">
+            <img src="emsi_log.png" alt="EMSI Logo" class="logo">
+            <div class="header-info">
+                <div class="contact-info">N° Tél : 06 68 19 98 52</div>
+                <div class="reference">Référence : 31/2025</div>
+            </div>
+        </div>
+        
+        <div class="document-title">
+            <div class="devis-heading">D E V I S</div>
+            <div class="document-ref">Document professionnel</div>
+        </div>
+        
+        <div class="client-info">
+            <div class="client-name">Entreprise nom</div>
+            <div class="project-title">Intitulé : Pack Sponsoring (Forum EMSI Entreprises Casablanca 14/11/2025)</div>
+        </div>
+        
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>Quantité</th>
+                    <th>Désignation</th>
+                    <th>Prix total TTC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Pack Sponsoring DIAMOND (Forum EMSI Entreprises Casablanca 11ème édition 2025)</td>
+                    <td class="highlight">18 000 DH</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="document-details">
+            <div class="detail-item"><span class="highlight">Date :</span> 25/06/2025</div>
+        </div>
+        
+        <div class="payment-terms">
+            <strong>Conditions de règlement :</strong> paiement de la somme totale avant le 31 janvier 2026 par chèque à l'ordre de "EMSI" ou par virement bancaire sur le numéro de compte tenu chez la BANQUE POPULAIRE "190780212110013324000062"
+        </div>
+        
+        <div class="footer">
+            <p><strong>Ecole Marocaine des Sciences de L'Ingénieur</strong></p>
+            <p>Adresse : 154, Rue El Bakri - CASABLANCA</p>
+            <p>Tél : 05 22 54 31 70 (l t ) Télé i : 05 22 54 31 66</p>
+        </div>
+    </div>
+</body>
+</html>

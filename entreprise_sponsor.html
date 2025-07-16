@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entreprises Sponsor</title>
+  <style>
+    :root {
+      --green: #2ecc71;
+      --border: #ddd;
+      --gray-text: #444;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+      --primary-color: #3498db;
+      --light-gray: #f5f7fa;
+      --hover-bg: #e8f5e9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f7;
+      color: var(--gray-text);
+    }
+
+    header {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: var(--light-bg);
+    }
+
+    nav .active {
+      background-color: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .admin-dropdown {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      font-size: 14px;
+    }
+
+    .entreprise-logo {
+      text-align: center;
+      margin: 40px 0 30px;
+    }
+
+    .entreprise-logo img {
+      height: 200px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding: 0 24px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+      color: #222;
+    }
+
+    .card p {
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #333;
+      display: inline-block;
+      min-width: 180px;
+    }
+
+    .doc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .doc-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .doc-list li:last-child {
+      border-bottom: none;
+    }
+
+    .input-reason {
+      margin-top: 16px;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .download-icon {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .download-icon:hover {
+      text-decoration: underline;
+    }
+
+    /* ----------------------------- */
+    /* NEW PROFESSIONAL TABLE STYLE */
+    /* ----------------------------- */
+    .table-wrapper {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    thead {
+      background-color: var(--green);
+      color: white;
+    }
+
+    thead th {
+      padding: 16px 20px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s ease;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--light-gray);
+    }
+
+    tbody tr:hover {
+      background-color: var(--hover-bg);
+    }
+
+    td {
+      padding: 14px 20px;
+    }
+   .controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 30px auto 20px;
+  padding: 0 24px;
+}
+
+.search-container {
+  width: 100%;
+}
+
+.search-container input {
+  padding: 10px 16px;
+  width: 100%;
+  max-width: 360px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-container input::placeholder {
+  color: #888;
+}
+
+.search-container input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filters button {
+  padding: 5px 10px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background-color: var(--light-bg);
+}
+
+    /* Styles des packs */
+/* Styles visuels pour les packs */
+td.silver,
+td.gold,
+td.bronze {
+  text-align: center;
+  padding: 10px 0;
+}
+
+td.silver::before,
+td.gold::before,
+td.bronze::before {
+  content: attr(data-pack);
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+td.silver::before {
+  background-color: #b0b0b0;
+  color: #fff;
+}
+
+td.gold::before {
+  background-color: #f1c40f;
+  color: #222;
+}
+
+td.bronze::before {
+  background-color: #cd7f32;
+  color: #fff;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="emsi_log.png" alt="EMSI Logo" />
+    </div>
+  <nav id="navbar">
+  <a href="Accueil.html"><button>Accueil</button></a>
+  <a href="entreprise_sponsor.html"><button>Entreprises Sponsor</button></a>
+  <a href="entreprise_non_sponsor.html"><button>Entreprises Non-Sponsor</button></a>
+  <a href="etudiant.html"><button>Étudiants</button></a>
+  <a href="Ambassadeur.html"><button>Ambassadeurs</button></a>
+  <a href="Prestataire.html"><button>Prestataires</button></a>
+  <select class="admin-dropdown">
+    <option>Admin</option>
+  </select>
+</nav>
+
+
+  </header>
+
+
+  <section class="controls">
+    <div class="search-container">
+      <input type="text" placeholder="🔍 Rechercher une entreprise..." />
+    </div>
+    <div class="filters">
+      <button>Filtre 1</button>
+      <button>Filtre 2</button>
+      <button>Filtre 3</button>
+      <button>Filtre 4</button>
+      <button>Filtre 5</button>
+    </div>
+  </section>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Identifiant</th>
+          <th>Mot de passe</th>
+          <th>Pack</th>
+          <th>Documents</th>
+          <th>Stand</th>
+          <th>Besoin RH</th>
+          <th>Filières</th>
+          <th>Détails</th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr>
+    <td>Capgemini</td>
+    <td>cmp-76bcd4</td>
+    <td>********</td>
+    <td class="no-pack"><span style="color:#999;font-style:italic;">—</span></td>
+    <td class="status-valid">Validé</td>
+    <td class="status-valid">Validé</td>
+    <td>Dév. Java / Fullstack – Stage 6 mois</td>
+    <td>IIR, GI</td>
+    <td><a class="details-link">Voir détails</a></td>
+  </tr>
+  <tr>
+    <td>CGI</td>
+    <td>cgi-ae42f91</td>
+    <td>********</td>
+    <td class="silver" data-pack="Silver"></td>
+    <td class="status-pending">En attente</td>
+    <td class="status-pending">En attente</td>
+    <td>Analyste données – CDI</td>
+    <td>IIR, IAII</td>
+    <td><a class="details-link">Voir détails</a></td>
+  </tr>
+  <tr>
+    <td>Orange</td>
+    <td>org-ff32c1a</td>
+    <td>********</td>
+    <td class="bronze" data-pack="Bronze"></td>
+    <td class="status-valid">Validé</td>
+    <td class="status-valid">Validé</td>
+    <td>Admin système – Stage 4 mois</td>
+    <td>GI, IFA</td>
+    <td><a class="details-link">Voir détails</a></td>
+  </tr>
+  <tr>
+    <td>Huawei</td>
+    <td>hua-55231af</td>
+    <td>********</td>
+    <td class="gold" data-pack="Gold"></td>
+    <td class="status-valid">Validé</td>
+    <td class="status-valid">Validé</td>
+    <td>DevOps Cloud – CDI</td>
+    <td>IAII, GI</td>
+    <td><a class="details-link">Voir détails</a></td>
+  </tr>
+</tbody>
+
+    </table>
+  </div>
+
+</body>
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll("#navbar a");
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+      const button = link.querySelector("button");
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+  });
+</script>
+
+</html>

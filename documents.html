@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Capgemini - Détails</title>
+  <style>
+    :root {
+      --green: #2ecc71;
+      --border: #ddd;
+      --gray-text: #444;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+
+      --white: #ffffff;
+      --light-gray: #f5f7fa;
+      --light-green: #e8f5e9;
+      --primary-green: #2ecc71;
+      --border-color: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f7;
+      color: var(--gray-text);
+    }
+
+    header {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: var(--light-bg);
+    }
+
+    nav .active {
+      background-color: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .admin-dropdown {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      font-size: 14px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin: 30px 0;
+      color: var(--secondary-color);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 0 24px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--light-bg); /* Changed from white */
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+      color: #222;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background-color: transparent; /* Removed white background */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.95rem;
+      background-color: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: var(--primary-green);
+      color: var(--white);
+    }
+
+    thead th {
+      padding: 16px 20px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    th:first-child {
+      border-top-left-radius: 12px;
+    }
+
+    th:last-child {
+      border-top-right-radius: 12px;
+    }
+
+    tbody tr {
+      transition: background-color 0.2s ease;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--light-gray);
+    }
+
+    tbody tr:hover {
+      background-color: var(--light-green);
+    }
+
+    td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .badge-morning {
+      background-color: #e3f2fd;
+      color: #0d47a1;
+    }
+
+    .badge-afternoon {
+      background-color: #fff8e1;
+      color: #ff8f00;
+    }
+
+    .input-reason {
+      margin-top: 16px;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .download-icon {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .download-icon:hover {
+      text-decoration: underline;
+    }
+    .controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 30px auto 20px;
+  padding: 0 24px;
+}
+
+.search-container {
+  width: 100%;
+}
+
+.search-container input {
+  padding: 10px 16px;
+  width: 100%;
+  max-width: 360px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-container input::placeholder {
+  color: #888;
+}
+
+.search-container input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filters button {
+  padding: 5px 10px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background-color: var(--light-bg);
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="emsi_log.png" alt="EMSI Logo" />
+    </div>
+    <nav>
+      <button>Accueil</button>
+      
+      <select class="admin-dropdown">
+        <option>Capgemini</option>
+      </select>
+    </nav>
+  </header>
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire + Documents</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: #000;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .left-panel, .right-panel {
+      border: 1px solid #000;
+      border-radius: 6px;
+      padding: 20px;
+      flex: 1;
+    }
+
+    .left-panel input,
+    .left-panel select,
+    .left-panel textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .left-panel label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .left-panel button {
+      background-color: #2ecc71;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .right-panel h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .doc-box {
+      border: 1px solid #000;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .doc-box h3 {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .doc-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .doc-row i {
+      margin: 0 6px;
+      cursor: pointer;
+    }
+
+    .doc-comment-section {
+      margin: 12px 0;
+    }
+
+    .doc-comment-section input {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <label>Nom de l'entreprise</label>
+      <input type="text">
+
+      <label>Logo de l'entreprise</label>
+      <input type="file">
+
+      <label>Choix du pack sponsor</label>
+      <select>
+        <option>Pack sponsor</option>
+        <option>Pack Gold</option>
+        <option>Pack Silver</option>
+        <option>Pack Bronze</option>
+      </select>
+
+      <label>Email contact</label>
+      <input type="email">
+
+      <label>Téléphone</label>
+      <input type="text">
+
+      <label>Filières ciblées:</label>
+      <input type="text">
+
+      <label>Nom du représentant</label>
+      <input type="text">
+
+      <label>Fonction du représentant</label>
+      <input type="text">
+
+      <label>Besoins RH</label>
+      <textarea></textarea>
+
+      <button>Sauvegarder</button>
+    </div>
+
+    <div class="right-panel">
+      <h2>Documents</h2>
+
+      <div class="doc-box">
+        <h3>DOCUMENTS FOURNIS PAR EMSI</h3>
+        <div class="doc-row">
+          <span>Devis</span>
+          <span>
+            <i class="file-icon">📄</i> devis.doc <i class="download-icon">⬇️</i>
+          </span>
+        </div>
+        <div class="doc-row"><span>Facture</span><span>Pas encore fourni</span></div>
+        <div class="doc-row"><span>Confirmation participation</span><span>Pas encore fourni</span></div>
+        <div class="doc-row"><span>Plan du stand</span><span>Pas encore fourni</span></div>
+        <div class="doc-row"><span>Emplacement du stand</span><span>Pas encore fourni</span></div>
+      </div>
+
+      <div class="doc-box">
+        <h3>DOCUMENTS FOURNIS PAR ENTREPRISE :</h3>
+        <div class="doc-row">
+          <span>Statut des documents:</span>
+          <span>Manquant</span>
+        </div>
+        <div class="doc-comment-section">
+          <input type="text" placeholder="Commentaires EMSI">
+        </div>
+        <div class="doc-row"><span>Devis signé</span></div>
+        <div class="doc-row"><span>Justificatif de paiement</span></div>
+        <div class="doc-row"><span>Documents facultatifs</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+ 
+
+</body>
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll("#navbar a");
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+      const button = link.querySelector("button");
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+  });
+</script>
+
+</html>

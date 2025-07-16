@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Capgemini - Détails</title>
+  <style>
+    :root {
+      --green: #2ecc71;
+      --border: #ddd;
+      --gray-text: #444;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f7;
+      color: var(--gray-text);
+    }
+
+    header {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: var(--light-bg);
+    }
+
+    nav .active {
+      background-color: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .admin-dropdown {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      font-size: 14px;
+    }
+
+    .entreprise-logo {
+      text-align: center;
+      margin: 40px 0 30px;
+    }
+
+    .entreprise-logo img {
+      height: 200px;
+    }
+
+    .card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Force 2 cards per row */
+  gap: 24px;
+  padding: 0 24px 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+      color: #222;
+    }
+
+    .card p {
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #333;
+      display: inline-block;
+      min-width: 180px;
+    }
+
+    .doc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .doc-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .doc-list li:last-child {
+      border-bottom: none;
+    }
+
+    .input-reason {
+      margin-top: 16px;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .download-icon {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .download-icon:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="emsi_log.png" alt="EMSI Logo" />
+    </div>
+    <nav id="navbar">
+  <a href="Accueil.html"><button>Accueil</button></a>
+  <a href="entreprise_sponsor.html"><button>Entreprises Sponsor</button></a>
+  <a href="entreprise_non_sponsor.html"><button>Entreprises Non-Sponsor</button></a>
+  <a href="etudiant.html"><button>Étudiants</button></a>
+  <a href="Ambassadeur.html"><button>Ambassadeurs</button></a>
+  <a href="Prestataire.html"><button>Prestataires</button></a>
+  <select class="admin-dropdown">
+    <option>Admin</option>
+  </select>
+</nav>
+  </header>
+
+  <!-- Company Logo -->
+  <div class="entreprise-logo">
+    <img src="cap.png" alt="Capgemini Logo" />
+  </div>
+
+  <!-- Info Cards -->
+  <div class="card-grid">
+
+    <!-- Company Info -->
+    <div class="card">
+      <p><span class="label">Identifiant:</span> cmp-76bcd4</p>
+      <p><span class="label">Mot de passe:</span> ********</p>
+      <p><span class="label">Choix du pack sponsor:</span> Gold</p>
+      <p><span class="label">Email contact:</span> contact@capgemini.com</p>
+      <p><span class="label">Téléphone:</span> +212 5 22 33 44 55</p>
+      <p><span class="label">Filières ciblées:</span> IIR, GI</p>
+      <p><span class="label">Nom du représentant:</span> Rachid El Amrani</p>
+      <p><span class="label">Fonction du représentant:</span> Responsable RH</p>
+      <p><span class="label">Besoins RH:</span> Dév. Java / Fullstack – Stage 6 mois</p>
+    </div>
+
+    <!-- Documents Fournis par l'entreprise -->
+    <div class="card">
+      <h3>Documents fournis par l’entreprise :</h3>
+      <ul class="doc-list">
+        <li><span>Devis signé</span> <span>devis.doc</span></li>
+        <li><span>Justificatif de paiement</span> <span>devis.doc</span></li>
+        <li><span>Documents facultatifs</span> <span>docs.doc</span></li>
+        <input type="text" class="input-reason" placeholder="Motif de rejet" />
+        <li><span><button>Historique</button></span></li>
+      </ul> 
+    </div>
+
+    <!-- Infos stand -->
+    <div class="card">
+      <h3>Informations sur le stand</h3>
+      <p><span class="label">Numéro du stand:</span> 42</p>
+      <p><span class="label">Statut de personnalisation:</span> Confirmé</p>
+      <p><span class="label">Spécificités stand:</span> Table haute, 2 chaises</p>
+      <p><span class="label">Nombre d’ambassadeurs assistant:</span> 1</p>
+      <p><span class="label">Nom de l’ambassadeur(s):</span> LAHLOU Karim</p>
+    </div>
+
+    <!-- Documents fournis par EMSI -->
+    <div class="card">
+      <h3>Documents fournis par EMSI :</h3>
+      <ul class="doc-list">
+        <li><span>Facture</span> <span><a class="download-icon" href="#">📄 facture.doc</a></span></li>
+        <li><span>Confirmation participation</span> <span><a class="download-icon" href="#">📄 confirmation.doc</a></span></li>
+        <li><span>Plan du stand</span> <span><a class="download-icon" href="#">📄 plan.doc</a></span></li>
+        <li><span>Emplacement du stand</span> <span><a class="download-icon" href="#">📄 docs.doc</a></span></li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll("#navbar a");
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+      const button = link.querySelector("button");
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+  });
+</script>
+
+</html>

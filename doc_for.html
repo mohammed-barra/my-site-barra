@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Détails Entreprise - Capgemini</title>
+  <style>
+    :root {
+      --green: #2ecc71;
+      --border: #ddd;
+      --gray-text: #444;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f7;
+      color: var(--gray-text);
+    }
+
+    header {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    nav .active {
+      background-color: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .admin-dropdown {
+      padding: 8px 14px;
+      border-radius: 6px;
+      background-color: white;
+    }
+
+    .entreprise-logo {
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+
+    .entreprise-logo img {
+      height: 150px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      min-width: 320px;
+      flex: 1;
+    }
+
+    .card h3 {
+      margin-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: 600;
+      display: inline-block;
+      min-width: 180px;
+      color: #333;
+    }
+
+    .doc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .doc-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+    }
+
+    .doc-list li:last-child {
+      border-bottom: none;
+    }
+
+    .missing {
+      color: red;
+      font-style: italic;
+    }
+    .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.card input, .card button {
+  font-size: 14px;
+}
+
+.card ul li {
+  padding: 6px 0;
+  font-size: 15px;
+}
+
+.card ul li span {
+  font-weight: 500;
+}
+
+.missing {
+  color: red;
+  font-style: italic;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="emsi_log.png" alt="EMSI Logo" />
+    </div>
+    <nav id="navbar">
+      <a href="Accueil.html"><button>Accueil</button></a>
+      <a href="entreprise_sponsor.html"><button>Entreprises Sponsor</button></a>
+      <a href="entreprise_non_sponsor.html"><button>Entreprises Non-Sponsor</button></a>
+      <a href="etudiant.html"><button>Étudiants</button></a>
+      <a href="Ambassadeur.html"><button>Ambassadeurs</button></a>
+     
+      <select class="admin-dropdown">
+        <option>Admin</option>
+      </select>
+    </nav>
+  </header>
+
+  
+  <div class="container">
+  <!-- LEFT SIDE - FORM -->
+  <div class="card" style="max-width: 400px; width: 100%;">
+    <h3>Informations de l'entreprise</h3>
+    <form>
+      <label for="email">Email de l'entreprise</label><br />
+      <input type="email" id="email" name="email" style="width: 100%; padding: 8px; margin-bottom: 12px;" /><br />
+
+      <label for="type">Type de prestation</label><br />
+      <input type="text" id="type" name="type" style="width: 100%; padding: 8px; margin-bottom: 12px;" /><br />
+
+      <label for="tel">Téléphone</label><br />
+      <input type="tel" id="tel" name="tel" style="width: 100%; padding: 8px; margin-bottom: 20px;" /><br />
+
+      <button type="submit" style="background-color: var(--green); color: white; padding: 10px 20px; border: none; border-radius: 6px;">Sauvegarder</button>
+    </form>
+  </div>
+
+  <!-- RIGHT SIDE - DOCUMENTS -->
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 24px;">
+    <!-- Docs entreprise -->
+    <div class="card">
+      <h3 style="text-align: center;">DOCUMENTS FOURNIS PAR L’ENTREPRISE :</h3>
+      <ul style="text-align: center; list-style: none; padding: 0; margin: 0;">
+        <li>Devis</li>
+        <li>Facture</li>
+      </ul>
+    </div>
+
+    <!-- Docs EMSI -->
+    <div class="card">
+      <h3 style="text-align: center;">DOCUMENTS FOURNIS PAR EMSI :</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="display: flex; justify-content: space-between;"><span>Devis signé</span><span class="missing">Manquant</span></li>
+        <li style="display: flex; justify-content: space-between;"><span>Justification de paiement</span><span class="missing">Manquante</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll("#navbar a");
+
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage) {
+        const button = link.querySelector("button");
+        if (button) {
+          button.classList.add("active");
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

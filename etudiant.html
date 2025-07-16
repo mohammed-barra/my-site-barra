@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Capgemini - Détails</title>
+  <style>
+    :root {
+      --green: #2ecc71;
+      --border: #ddd;
+      --gray-text: #444;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+
+      --white: #ffffff;
+      --light-gray: #f5f7fa;
+      --light-green: #e8f5e9;
+      --primary-green: #2ecc71;
+      --border-color: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f7;
+      color: var(--gray-text);
+    }
+
+    header {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: var(--light-bg);
+    }
+
+    nav .active {
+      background-color: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .admin-dropdown {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      font-size: 14px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin: 30px 0;
+      color: var(--secondary-color);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 0 24px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: var(--light-bg); /* Changed from white */
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+      color: #222;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background-color: transparent; /* Removed white background */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.95rem;
+      background-color: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: var(--primary-green);
+      color: var(--white);
+    }
+
+    thead th {
+      padding: 16px 20px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    th:first-child {
+      border-top-left-radius: 12px;
+    }
+
+    th:last-child {
+      border-top-right-radius: 12px;
+    }
+
+    tbody tr {
+      transition: background-color 0.2s ease;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--light-gray);
+    }
+
+    tbody tr:hover {
+      background-color: var(--light-green);
+    }
+
+    td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .badge-morning {
+      background-color: #e3f2fd;
+      color: #0d47a1;
+    }
+
+    .badge-afternoon {
+      background-color: #fff8e1;
+      color: #ff8f00;
+    }
+
+    .input-reason {
+      margin-top: 16px;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .download-icon {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .download-icon:hover {
+      text-decoration: underline;
+    }
+    .controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 30px auto 20px;
+  padding: 0 24px;
+}
+
+.search-container {
+  width: 100%;
+}
+
+.search-container input {
+  padding: 10px 16px;
+  width: 100%;
+  max-width: 360px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-container input::placeholder {
+  color: #888;
+}
+
+.search-container input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filters button {
+  padding: 5px 10px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background-color: var(--light-bg);
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="emsi_log.png" alt="EMSI Logo" />
+    </div>
+   <nav id="navbar">
+  <a href="Accueil.html"><button>Accueil</button></a>
+  <a href="entreprise_sponsor.html"><button>Entreprises Sponsor</button></a>
+  <a href="entreprise_non_sponsor.html"><button>Entreprises Non-Sponsor</button></a>
+  <a href="etudiant.html"><button>Étudiants</button></a>
+  <a href="Ambassadeur.html"><button>Ambassadeurs</button></a>
+  <a href="Prestataire.html"><button>Prestataires</button></a>
+  <select class="admin-dropdown">
+    <option>Admin</option>
+  </select>
+</nav>
+  </header>
+  <section class="controls">
+    <div class="search-container">
+      <input type="text" placeholder="🔍 Recherche un étudiant..." />
+    </div>
+    <div class="filters">
+      <button>Filtre 1</button>
+      <button>Filtre 2</button>
+      <button>Filtre 3</button>
+      <button>Filtre 4</button>
+      <button>Filtre 5</button>
+    </div>
+  </section>
+
+  <!-- Page Title -->
+  <div class="page-title">
+    <h1>Liste des Étudiants</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div class="card-grid">
+    <div class="card">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom complet</th>
+              <th>Email EMSI</th>
+              <th>Filière</th>
+              <th>Créneau</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sara Benali</td>
+              <td>sara.benali@email.ma</td>
+              <td>IIR</td>
+              <td><span class="badge badge-morning">Matin</span></td>
+            </tr>
+            <tr>
+              <td>Yassine Arrraul</td>
+              <td>yassine.arrraul@email.ma</td>
+              <td>OI</td>
+              <td><span class="badge badge-afternoon">Après-midi</span></td>
+            </tr>
+            <tr>
+              <td>Nadia El Maliki</td>
+              <td>Malikindia.elmaki@email.ma</td>
+              <td>IMI</td>
+              <td><span class="badge badge-morning">Matin</span></td>
+            </tr>
+            <tr>
+              <td>Nadia El Maliki</td>
+              <td>Malikindia.elmaki@email.ma</td>
+              <td>IMI</td>
+              <td><span class="badge badge-morning">Matin</span></td>
+            </tr>
+            <tr>
+              <td>Yassine Arrraul</td>
+              <td>yassine.arrraul@email.ma</td>
+              <td>OI</td>
+              <td><span class="badge badge-afternoon">Après-midi</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll("#navbar a");
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+      const button = link.querySelector("button");
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+  });
+</script>
+
+</html>

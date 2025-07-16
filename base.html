@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accueil - Plateforme EMSI</title>
+  <link rel="icon" href="emsi_log.png" />
+  <meta name="description" content="Plateforme EMSI pour gérer les sponsors, étudiants et prestataires.">
+  <style>
+    :root {
+      --green: #2ecc71;
+      --border: #ddd;
+      --gray-text: #444;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+      --primary-color: #3498db;
+      --light-gray: #f5f7fa;
+      --hover-bg: #e8f5e9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f7;
+      color: var(--gray-text);
+    }
+
+    header {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: var(--light-bg);
+    }
+
+    nav .active {
+      background-color: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .admin-dropdown {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: white;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    .hero img {
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 30px 24px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .nav-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .nav-card:hover {
+      background-color: #f1fdf7;
+      transform: translateY(-3px);
+    }
+
+    .nav-card span {
+      display: block;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .stats-preview {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #fff;
+      margin-top: 30px;
+    }
+
+    .stats-preview h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .stats-preview ul {
+      list-style: none;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    .stats-preview li {
+      margin: 10px 0;
+    }
+
+    .dashboard {
+      padding: 40px 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card-grid-dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .stat-card {
+      background-color: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .stat-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-card .number {
+      font-size: 32px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .stat-card .label {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="emsi_log.png" alt="EMSI Logo" />
+    </div>
+    <nav id="navbar">
+      <a href="Accueil.html"><button class="active">Accueil</button></a>
+      <a href="entreprise_sponsor.html"><button>Entreprises Sponsor</button></a>
+      <a href="entreprise_non_sponsor.html"><button>Entreprises Non-Sponsor</button></a>
+      <a href="etudiant.html"><button>Étudiants</button></a>
+      <a href="Ambassadeur.html"><button>Ambassadeurs</button></a>
+      <select class="admin-dropdown">
+        <option>👤 Admin</option>
+      </select>
+    </nav>
+  </header>
+
+  
+    
+
+    
+
+    
+     
+      
+  
+
+ 
+
+
+</body>
+</html>
